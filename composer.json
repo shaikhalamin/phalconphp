@@ -1,0 +1,7 @@
+{
+    "name": "shaikh/store",
+    "require": {
+        "windwalker/renderer": "~3.0",
+        "illuminate/view" : "4.*"
+    }
+}
