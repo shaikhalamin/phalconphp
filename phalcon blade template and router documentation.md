@@ -1,25 +1,24 @@
-//how to include balde template in php phalcon
-//create a composer.json in project root  (if project name is myblog then create composer.json in myblog folder)
+#how to include balde template in php phalcon
+#create a composer.json in project root  (if project name is  then create composer.json in myblog folder)
 --> composer init
-//put the following depedency in the required section
+#put the following depedency in the required section
 
-"require": {
         "windwalker/renderer": "~3.0",
         "illuminate/view" : "4.*"
-    }
+
 
 --> composer update
 
 
-//now open app/config.php and put the following code in the application array section
+#now open app/config.php and put the following code in the application array section
 
 -->  'vendor'         => BASE_PATH . '/vendor/',
 
-//now open index.php from public and put the following 
+#now open index.php from public and put the following
 
   --> include BASE_PATH . '/vendor/autoload.php';
 
-//now open app/services.php  and change the "view" $di as the following
+#now open app/services.php  and change the "view" $di as the following
 
 $di->setShared('view', function () {
     $config = $this->getConfig();
@@ -30,7 +29,7 @@ $di->setShared('view', function () {
 });
 
 
-//now put the following $di for blade template DI
+#now put the following $di for blade template DI
 
 $di->set('blade', function () {
     $config = $this->getConfig();
@@ -39,10 +38,10 @@ $di->set('blade', function () {
     return $render;
 });
 
-	
 
 
-//now put the following code into controllers/ControllerBase.php for stop rendering view for volt
+
+#now put the following code into controllers/ControllerBase.php for stop rendering view for volt
 
 public function onConstruct(){
       $this->view->disable();
@@ -50,9 +49,9 @@ public function onConstruct(){
 
 
 
-//create routes in phalcon php
+#create routes in phalcon php
 
-//put the following code in app/service.php
+#put the following code in app/service.php
 
 $di->set('router', function(){
     $config = $this->getConfig();
@@ -61,14 +60,12 @@ $di->set('router', function(){
     return $router;
 },true);
 
-//now create config/routes.php
+#now create config/routes.php
 
-//now put the following code in config/routes.php
+#now put the following code in config/routes.php
 <?php
 
 $router->add("/home", array(
     'controller' => 'index',
     'action' => 'index',
 ));
-
-
