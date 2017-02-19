@@ -3,7 +3,7 @@ create a composer.json in project root  (if project name is  then create compose
 --> composer init
 put the following depedency in the required section
 
-      ```javascript
+      ```php
       "windwalker/renderer": "~3.0",
         "illuminate/view" : "4.*"
         ```
