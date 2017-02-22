@@ -2,6 +2,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <h1>This is the view from blade template !<?php echo $title; ?></h1>
+<?php echo assets.outputCss(); ?>
 
 <?php $__env->stopSection(); ?>
 

@@ -11,3 +11,10 @@ $loader->registerDirs(
         $config->application->modelsDir
     ]
 )->register();
+
+
+$loader->registerNamespaces(
+        array(
+            'Libs' => $config->application->libraryDir
+        )
+    );

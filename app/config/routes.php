@@ -1,6 +1,6 @@
 <?php
 
-$router->add("/home", array(
+$router->add("/", array(
     'controller' => 'index',
     'action' => 'index',
-));
+))->setName("/");

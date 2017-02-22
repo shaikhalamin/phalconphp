@@ -55,6 +55,16 @@ $di->set('router', function(){
     return $router;
 },true);
 
+/**
+ * Setting up the HTML Library component
+ */
+$di->set('html', function() use($di){
+    $config = $this->getConfig();
+    $html = new \Libs\HTML($di);
+    return $html;
+    
+});
+
 
 
 /**
