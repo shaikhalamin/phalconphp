@@ -1,11 +1,12 @@
 <?php
-use \Libs\HTML;
+
 class IndexController extends ControllerBase
 {
 
     public function indexAction()
     {
-    	return $this->html->style("public/css/bootstrap.min.css");
+    	$title = "Phalcon PHP";
+    	return $this->blade->render("index.home",["title" => "$title"]);
     }
 
 }

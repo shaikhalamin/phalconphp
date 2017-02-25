@@ -14,7 +14,7 @@ class HTML extends Injector
 		return '<link rel="stylesheet" type="text/css" href="'.$this->url->get(["for"=>"/"]).$path.'">';
 	}
 
-	public static function script($path){
+	public function script($path){
 		return '<script src="'.$this->url->get(["for"=>"/"]).$path.'"></script>';
 	}
 }

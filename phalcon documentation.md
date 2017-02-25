@@ -82,3 +82,25 @@ $router->add("/home", array(
     'action' => 'index',
 ));
 ```
+
+#register namespace in phalcon php
+
+//open app/loader.php put the following content on it
+
+```php
+
+$loader->registerNamespaces(
+        array(
+            'Libs' => $config->application->libraryDir
+        )
+    );
+```
+
+//now open app/config.php and put the following content in application array section
+
+
+```php
+
+'libraryDir'     => APP_PATH . '/library/',
+
+```
