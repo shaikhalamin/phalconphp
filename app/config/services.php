@@ -6,6 +6,9 @@ use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Http\Request;
+use Phalcon\Tag;
 use Phalcon\Flash\Direct as Flash;
 
 /**
@@ -120,3 +123,19 @@ $di->setShared('session', function () {
 
     return $session;
 });
+
+/**
+ * Registering MVC dispatcher as service
+ */
+$di->set("dispatcher",function () {
+
+        $dispatcher = new Dispatcher();
+
+        return $dispatcher;
+    }
+);
+
+/**
+ * Registering Resquest as service
+ */
+

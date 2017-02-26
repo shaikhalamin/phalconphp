@@ -1,8 +1,7 @@
-@extends('layouts.master')
-@section('title', $title)
-@endsection
+<?php $__env->startSection('title', $title); ?>
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row">
 	<div class="col-md-4 col-md-offset-4">
 		<?php echo \Phalcon\Tag::form(["login","method" => "post","class" => "form"]) ?>
@@ -21,4 +20,6 @@
 	</div>
 </div>
 	
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
